@@ -11,13 +11,13 @@ public class Changer : MonoBehaviour
 
     public SpriteRenderer colorChange;
 
-    //After 3 seconds have passed – change the colour of the object to green.
+    //After 3 seconds have passed ï¿½ change the colour of the object to green.
 
-    //After 4 seconds have passed – change the size of the object to be twice as large.
+    //After 4 seconds have passed ï¿½ change the size of the object to be twice as large.
 
-    //After 5 seconds have passed – rotate the object by 180 degrees.
+    //After 5 seconds have passed ï¿½ rotate the object by 180 degrees.
 
-    //After 6 seconds have passed – destroy the object.
+    //After 6 seconds have passed ï¿½ destroy the object.
     void Start()
     {
         
