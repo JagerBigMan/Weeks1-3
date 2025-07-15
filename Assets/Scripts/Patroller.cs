@@ -7,6 +7,7 @@ public class Patroller : MonoBehaviour
     public Vector3 startValue;
     public Vector3 endValue;
     public float currentTime;
+    public float duration;
 
     bool moveForward = true;
 
@@ -21,7 +22,7 @@ public class Patroller : MonoBehaviour
     {
         if (moveForward)
         {
-            currentTime += Time.deltaTime;
+            currentTime += Time.deltaTime / duration;
 
             //if(currentTime > 1f)
             if (endValue == transform.position)
@@ -31,7 +32,7 @@ public class Patroller : MonoBehaviour
         }
         else
         {
-            currentTime -= Time.deltaTime;
+            currentTime -= Time.deltaTime / duration;
 
             //if(currentTime < 0f)
             if (startValue == transform.position)
