@@ -19,7 +19,8 @@ public class DestroyOnClick : MonoBehaviour
             Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPosition.z = 0f;
 
-            float distance = Vector3.Distance(mouseWorldPosition, mouseWorldPosition);
+            float distance = Vector3.Distance(transform.position, mouseWorldPosition);
+            Debug.Log(distance);
 
             if (distance < 1f)
             {
