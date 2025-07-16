@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UnassembledParts : MonoBehaviour
 {
+    public float dropSpeed = 1.0f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class UnassembledParts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position += Vector3.right * dropSpeed * Time.deltaTime;
     }
 }
