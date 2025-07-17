@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class ProcessingStation : MonoBehaviour
 {
@@ -9,12 +8,14 @@ public class ProcessingStation : MonoBehaviour
     public GameObject partToProcess;
     public GameObject circleOutput;
     public PartSpawner partsSpawner;
+    public float moveOutSpeed = 1f;
 
+    public List<GameObject> outputs;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        outputs = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -29,12 +30,15 @@ public class ProcessingStation : MonoBehaviour
 
                 if (activationRange <= activationDistance)
                 {
-                    Destroy(partsSpawner.spawnedParts[index]);
-                    
-
                     Vector3 spawnPosition = partsSpawner.spawnedParts[index].transform.position;
 
-                    Instantiate(circleOutput, spawnPosition, Quaternion.identity);
+                    Destroy(partsSpawner.spawnedParts[index]);
+
+                    partsSpawner.spawnedParts.RemoveAt(index); //searched online for solution to remove the first index of a list  https://discussions.unity.com/t/lists-and-removeat/651500 
+
+                    GameObject output = Instantiate(circleOutput, spawnPosition, Quaternion.identity);
+                    output.transform.position += Vector3.right * moveOutSpeed * Time.deltaTime;
+                    
                 }
             }
         }
