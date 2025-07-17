@@ -26,7 +26,7 @@ public class ProcessingStation : MonoBehaviour
         {
             for (int index = 0; index < partsSpawner.spawnedParts.Count; index++)
             {
-                float activationRange = Mathf.Abs(transform.position.x - partsSpawner.spawnedParts[index].transform.position.x);
+                float activationRange = (transform.position.x - partsSpawner.spawnedParts[index].transform.position.x);
 
                 if (activationRange <= activationDistance)
                 {
